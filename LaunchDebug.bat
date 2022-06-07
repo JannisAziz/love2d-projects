@@ -1,0 +1,1 @@
+start "" "F:\LOVE2D\love.exe" "F:\LOVE Projects\lovely-enemies" --console

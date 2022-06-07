@@ -1,0 +1,72 @@
+-- require 'system-utils' -- SYSUTILS
+-- local game_objects = {}
+-- function love.load()
+--     wf = require "libs/windfield"
+--     world = wf.newWorld(0, 500)
+--     player = world:newRectangleCollider(350, 100, 80, 80)
+--     ground = world:newRectangleCollider(100, 400, 600, 100)
+--     ground:setType("static")
+--     -- Button
+--     button = {}
+--     button.x = 200
+--     button.y = 200
+--     button.size = 50
+--     -- System
+--     score = 0
+--     timer = 0
+--     font = love.graphics.newFont(40)
+-- end
+-- function love.update(dt)
+--     world:update(dt)
+--     local px, py = ground:getLinearVelocity()
+--     if love.keyboard.isDown("left") and px > -300 then
+--         player:applyForce(-8000, 0)
+--     elseif love.keyboard.isDown("right") and px < 300 then
+--         player:applyForce(8000, 0)
+--     end
+--     if love.keyboard.isDown("q") or love.keyboard.isDown("escape") then
+--         SYSUTILS.quit_game()
+--     end
+-- end
+-- function love.draw()
+--     world:draw()
+--     love.graphics.setFont(font)
+--     love.graphics.setBackgroundColor(15 / 55, 15 / 255, 15 / 255)
+--     draw_ui()
+-- end
+-- function love.keypressed(key)
+--     if key == "up" then
+--         player:applyLinearImpulse(0, -5000)
+--     end
+-- end
+-- function love.mousepressed(x, y, mb, istouch)
+--     -- Left mouse button pressed
+--     if mb == 1 then
+--         local new_button = UIButton.new()
+--         add_element(new_button)
+--     end
+-- end
+-- function check_object_pressed()
+--     -- if distance_between(button.x, button.y, love.mouse.getX(), love.mouse.getY()) > button.size then
+--     --     return false
+--     -- end
+--     -- local rx = math.random(button.size, love.graphics.getWidth() - button.size)
+--     -- local ry = math.random(button.size, love.graphics.getHeight() - button.size)
+--     -- button.x = rx
+--     -- button.y = ry
+--     return true
+-- end
+-- function distance_between(x1, y1, x2, y2)
+--     return math.sqrt((y2 - y1) ^ 2 + (x2 - x1) ^ 2)
+-- end
+-- -- GUI 
+-- local GUI_ELEMENTS = {} -- drawable objects
+-- function add_element(new)
+--     table.insert(GUI_ELEMENTS, new)
+-- end
+-- function draw_ui()
+--     for idx, element in ipairs(GUI_ELEMENTS) do
+--         love.graphics.draw(element)
+--     end
+--     love.graphics.setColor(0.5, 0.3, 0.3)
+-- end
